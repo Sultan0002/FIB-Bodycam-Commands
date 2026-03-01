@@ -2,12 +2,6 @@
 <html>
 <head>
 <title>FIB Bodycam Commands</title>
-<div class="top-tabs">
-  <button class="tab-btn active" onclick="switchTab('bodycam', this)">Bodycam</button>
-  <button class="tab-btn" onclick="switchTab('radio', this)">Radio Codes</button>
-</div>
-
-<div id="bodycam" class="tab-content active">  
   
 <style>
 body {
@@ -144,11 +138,13 @@ h1 {
 /* Top Navigation */
 .top-tabs {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: flex-start;   /* left side */
+  gap: 15px;
   margin-bottom: 30px;
 }
 
+<div id="bodycam" class="tab-content active">
+  
 .tab-btn {
   padding: 10px 25px;
   border-radius: 25px;
@@ -183,6 +179,10 @@ h1 {
 <body>
 
 <div class="container">
+<div class="top-tabs">
+  <button class="tab-btn active" onclick="switchTab('bodycam', this)">Bodycam</button>
+  <button class="tab-btn" onclick="switchTab('radio', this)">Radio Codes</button>
+</div>  
 
 <img src="https://i.postimg.cc/J0b5KRgf/download-removebg-preview.png" class="logo">
 <h1>FIB Bodycam Commands</h1>
@@ -246,6 +246,25 @@ h1 {
     <div class="command-box"><div class="command-text">/me disconnects PDA to FIB cloud server</div><button class="copy-btn" onclick="copy(this)">Copy</button></div>
     </div>
   </div>
+
+<div id="radio" class="tab-content">
+
+  <h1>Radio Codes</h1>
+  <div class="yellow-line"></div>
+
+  <div class="command-box">
+    <div class="command-text">10-4 = Acknowledged</div>
+  </div>
+
+  <div class="command-box">
+    <div class="command-text">10-20 = Location</div>
+  </div>
+
+  <div class="command-box">
+    <div class="command-text">10-99 = Officer Needs Assistance</div>
+  </div>
+
+</div>  
 </div>
 
 </div>
@@ -257,6 +276,18 @@ function copy(button) {
   button.innerText = "Copied!";
   setTimeout(() => button.innerText = "Copy", 1500);
 }
+function switchTab(tabId, button) {
+  document.querySelectorAll(".tab-content").forEach(tab => {
+    tab.classList.remove("active");
+  });
+
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  document.getElementById(tabId).classList.add("active");
+  button.classList.add("active");
+}  
 
 /* Scroll Reveal */
 const observer = new IntersectionObserver(entries => {
@@ -274,8 +305,3 @@ document.querySelectorAll(".command-box").forEach(box => {
 
 </body>
 </html>
-
-
-
-
-
