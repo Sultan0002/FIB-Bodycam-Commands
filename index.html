@@ -2,95 +2,137 @@
 <html>
 <head>
   <title>FIB Bodycam Commands</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #000000;
-      display: flex;
-      justify-content: center;
-    }
+ <style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000000;
+    display: flex;
+    justify-content: center;
+  }
 
-    .container {
-      width: 85%;
-      max-width: 950px;
-      background: #0a0a0a;
-      margin: 40px 0;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.6);
-      color: white;
-    }
+  .container {
+    width: 85%;
+    max-width: 950px;
+    margin: 40px 0;
+    padding: 40px;
+    border-radius: 20px;
 
-    .logo {
-      display: block;
-      margin: 0 auto 20px auto;
-      width: 120px;
-    }
+    /* Glass Effect */
+    background: rgba(20, 20, 20, 0.65);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 
-    h1 {
-      text-align: center;
-      margin-bottom: 5px;
-    }
+    border: 1px solid rgba(255,255,255,0.08);
 
-    .subtitle {
-      text-align: center;
-      color: #bbb;
-      margin-bottom: 30px;
-    }
+    /* Subtle Neon Glow */
+    box-shadow: 0 0 25px rgba(0, 140, 255, 0.15);
 
-    .search-bar {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      margin-bottom: 30px;
-      font-size: 16px;
-    }
+    color: white;
 
-    .section-title {
-      font-size: 24px;
-      font-weight: bold;
-      color: #ffd500;
-      margin-top: 40px;
-    }
+    /* Smooth Fade Animation */
+    animation: fadeIn 1s ease forwards;
+  }
 
-    .yellow-line {
-      height: 2px;
-      background: #ffd500;
-      margin: 10px 0 20px 0;
-    }
+  .logo {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 120px;
+    animation: float 4s ease-in-out infinite;
+  }
 
-    .command-box {
-      background: #111827;
-      padding: 15px 20px;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-left: 4px solid #3b82f6;
-    }
+  h1 {
+    text-align: center;
+    margin-bottom: 5px;
+  }
 
-    .command-text {
-      font-family: monospace;
-      font-size: 15px;
-    }
+  .subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 30px;
+  }
 
-    .copy-btn {
-      background: #3b82f6;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 8px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
+  .search-bar {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 30px;
+    font-size: 16px;
+    background: #111;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+  }
 
-    .copy-btn:hover {
-      background: #2563eb;
-    }
-  </style>
+  .search-bar:focus {
+    box-shadow: 0 0 10px rgba(0, 140, 255, 0.6);
+  }
+
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd500;
+    margin-top: 40px;
+  }
+
+  .yellow-line {
+    height: 2px;
+    background: #ffd500;
+    margin: 10px 0 20px 0;
+  }
+
+  .command-box {
+    background: rgba(17, 24, 39, 0.8);
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid #3b82f6;
+
+    transition: 0.3s ease;
+  }
+
+  .command-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+  }
+
+  .command-text {
+    font-family: monospace;
+    font-size: 15px;
+  }
+
+  .copy-btn {
+    background: #3b82f6;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .copy-btn:hover {
+    background: #2563eb;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+  }
+</style>
 </head>
 <body>
 
@@ -175,4 +217,5 @@
 </body>
 
 </html>
+
 
