@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FIB Bodycam Commands</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(90deg, #0f2a2e, #2c4b57);
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 85%;
+      max-width: 950px;
+      background: #1e2638;
+      margin: 40px 0;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.6);
+      color: white;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto 20px auto;
+      width: 120px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #bbb;
+      margin-bottom: 30px;
+    }
+
+    .search-bar {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffd500;
+      margin-top: 40px;
+    }
+
+    .yellow-line {
+      height: 2px;
+      background: #ffd500;
+      margin: 10px 0 20px 0;
+    }
+
+    .command-box {
+      background: #111827;
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 4px solid #3b82f6;
+    }
+
+    .command-text {
+      font-family: monospace;
+      font-size: 15px;
+    }
+
+    .copy-btn {
+      background: #3b82f6;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      background: #2563eb;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- FBI Logo -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/FBI_Seal.svg" class="logo">
+
+  <h1>FIB Bodycam Commands</h1>
+  <div class="subtitle">Custom Command Panel</div>
+
+  <!-- Search -->
+  <input type="text" class="search-bar" placeholder="Search commands..." onkeyup="searchCommands(this.value)">
+
+  <!-- ON DUTY -->
+  <div class="section-title">📷 On Duty</div>
+  <div class="yellow-line"></div>
+
+  <div class="command-box"><div class="command-text">/me turns on bodycam</div><button class="copy-btn" onclick="copy(this)">Copy</button></div>
+  <div class="command-box"><div class="command-text">/do makes sure its recording and uploading to FIB cloud server</div><button class="copy-btn" onclick="copy(this)">Copy</button></div>
+  <div class="command-box"><div class="command-text">/me connects PDA to FIB cloud server</div><button class="copy-btn" onclick="copy(this)">Copy</button></div>
+
+  <!-- GOING UNDERCOVER -->
+  <div class="section-title">🕵️ Going Undercover</div>
+  <div class="yellow-line"></div>
+
+  <div class="command-box"><div class="command-text">/me turns on bodycam</div><button class="copy-btn" onclick="copy(this)">Copy</button></div>
+  <div class="command-box"><div class="command-text">/me straps ballistic waterproof hidden bodycam in belt</div><button class="copy-btn" onclick="copy(this)">Copy</button></div>
+  <div class="command-box"><div class="command-text">/do it is recording and uploading to FIB cloud server</div><button class="copy-btn" onclick="copy(this)">Copy</button></div>
+  <div class="command-box"><div class="command-text">/me connects PDA to nearest cell tower and FIB cloud server</div><button class="copy-btn" onclick="copy(this)">Copy</button></div>
+
+  <!-- DRONE COMMANDS -->
+  <div class="section-title">✈️ Drone Commands</div>
+  <div class="yellow-line"></div>
+
+  <div class="command-box"><div class="command-text">/me takes out drone from locker and puts it in backpack</div><button class="copy-btn" onclick="copy(this)">Copy</button></div>
+  <div class="command-box"><div class="command-text">/me takes out drone from backpack and launches it</div><button class="copy-btn" onclick="copy(this)">Copy</button></div>
+  <div class="command-box"><div class="command-text">/me launches drone</div><button class="copy-btn" onclick="copy(this)">Copy</button></div>
+
+  <!-- REFRESH BODYCAM -->
+  <div class="section-title">🔄 Refresh Bodycam</div>
+  <div class="yellow-line"></div>
+
+  <div class="command-box"><div class="command-text">/me refreshes bodycam</div><button class="copy-btn" onclick="copy(this)">Copy</button></div>
+  <div class="command-box"><div class="command-text">/do it is recording</div><button class="copy-btn" onclick="copy(this)">Copy</button></div>
+
+  <!-- RADAR -->
+  <div class="section-title">📡 Radar</div>
+  <div class="yellow-line"></div>
+
+  <div class="command-box"><div class="command-text">/me sets the radar</div><button class="copy-btn" onclick="copy(this)">Copy</button></div>
+  <div class="command-box"><div class="command-text">/me picks up the radar</div><button class="copy-btn" onclick="copy(this)">Copy</button></div>
+
+  <!-- ID HANDLING -->
+  <div class="section-title">🪪 ID Handling</div>
+  <div class="yellow-line"></div>
+
+  <div class="command-box"><div class="command-text">/me puts my ID card in the car trunk</div><button class="copy-btn" onclick="copy(this)">Copy</button></div>
+  <div class="command-box"><div class="command-text">/me takes the ID card from car trunk</div><button class="copy-btn" onclick="copy(this)">Copy</button></div>
+
+</div>
+
+<script>
+  function copy(button) {
+    const text = button.previousElementSibling.innerText;
+    navigator.clipboard.writeText(text);
+    button.innerText = "Copied!";
+    setTimeout(() => button.innerText = "Copy", 1500);
+  }
+
+  function searchCommands(input) {
+    const filter = input.toLowerCase();
+    const boxes = document.querySelectorAll(".command-box");
+
+    boxes.forEach(box => {
+      const text = box.innerText.toLowerCase();
+      box.style.display = text.includes(filter) ? "flex" : "none";
+    });
+  }
+</script>
+
+</body>
+</html>
