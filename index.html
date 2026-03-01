@@ -167,8 +167,6 @@ h1 {
   box-shadow: 0 0 12px rgba(59,130,246,0.7);
   animation: glowPulse 3.5s ease-in-out infinite;
 }
-
-<div id="bodycam" class="tab-content active">
   
 .tab-btn {
   padding: 10px 25px;
@@ -190,14 +188,6 @@ h1 {
   box-shadow: 0 0 10px #3b82f6;
 }
 
-.tab-content {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-}
 
 .tab-content.active {
   opacity: 1;
@@ -231,8 +221,8 @@ h1 {
 
 <div class="container">
 <div class="top-tabs">
-  <button class="tab-btn active" onclick="switchTab('bodycam', this)">Bodycam</button>
-  <button class="tab-btn" onclick="switchTab('radio', this)">Radio Codes</button>
+  <a href="index.html" class="tab-btn active">Bodycam</a>
+  <a href="radio.html" class="tab-btn">Radio Codes</a>
 </div>  
 
 <img src="https://i.postimg.cc/J0b5KRgf/download-removebg-preview.png" class="logo">
@@ -327,18 +317,6 @@ function copy(button) {
   button.innerText = "Copied!";
   setTimeout(() => button.innerText = "Copy", 1500);
 }
-function switchTab(tabId, button) {
-  document.querySelectorAll(".tab-content").forEach(tab => {
-    tab.classList.remove("active");
-  });
-
-  document.querySelectorAll(".tab-btn").forEach(btn => {
-    btn.classList.remove("active");
-  });
-
-  document.getElementById(tabId).classList.add("active");
-  button.classList.add("active");
-}  
 
 /* Scroll Reveal */
 const observer = new IntersectionObserver(entries => {
@@ -356,4 +334,5 @@ document.querySelectorAll(".command-box").forEach(box => {
 
 </body>
 </html>
+
 
