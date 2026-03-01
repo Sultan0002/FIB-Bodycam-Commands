@@ -6,7 +6,7 @@
   body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #000000;
+    background: #000;
     display: flex;
     justify-content: center;
   }
@@ -17,73 +17,70 @@
     margin: 40px 0;
     padding: 40px;
     border-radius: 20px;
-
-    /* Glass Effect */
-    background: rgba(20, 20, 20, 0.65);
+    background: rgba(20,20,20,0.65);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-
     border: 1px solid rgba(255,255,255,0.08);
-
-    /* Subtle Neon Glow */
-    box-shadow: 0 0 25px rgba(0, 140, 255, 0.15);
-
+    position: relative;
+    overflow: hidden;
     color: white;
+  }
 
-    /* Smooth Fade Animation */
-    animation: fadeIn 1s ease forwards;
+  /* 🔵 Neon Animated Border */
+  .container::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 22px;
+    background: linear-gradient(90deg, #00f2ff, #3b82f6, #00f2ff);
+    background-size: 300% 300%;
+    animation: borderGlow 6s linear infinite;
+    z-index: -1;
+  }
+
+  @keyframes borderGlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
   }
 
   .logo {
     display: block;
     margin: 0 auto 20px auto;
     width: 120px;
-    animation: float 4s ease-in-out infinite;
   }
 
   h1 {
     text-align: center;
-    margin-bottom: 5px;
-  }
-
-  .subtitle {
-    text-align: center;
-    color: #888;
     margin-bottom: 30px;
   }
 
-  .search-bar {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    margin-bottom: 30px;
-    font-size: 16px;
-    background: #111;
-    color: white;
-    outline: none;
+  /* SECTION HEADER */
+  .section-header {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffd500;
+    cursor: pointer;
+    margin-top: 35px;
     transition: 0.3s;
   }
 
-  .search-bar:focus {
-    box-shadow: 0 0 10px rgba(0, 140, 255, 0.6);
-  }
-
-  .section-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #ffd500;
-    margin-top: 40px;
+  .section-header:hover {
+    text-shadow: 0 0 10px #ffd500;
   }
 
   .yellow-line {
     height: 2px;
     background: #ffd500;
-    margin: 10px 0 20px 0;
+    margin: 10px 0 15px 0;
+  }
+
+  .commands {
+    overflow: hidden;
+    transition: max-height 0.5s ease;
   }
 
   .command-box {
-    background: rgba(17, 24, 39, 0.8);
+    background: rgba(17,24,39,0.8);
     padding: 15px 20px;
     border-radius: 10px;
     margin-bottom: 15px;
@@ -91,18 +88,23 @@
     justify-content: space-between;
     align-items: center;
     border-left: 4px solid #3b82f6;
+    transform: translateY(40px);
+    opacity: 0;
+    transition: 0.6s ease;
+  }
 
-    transition: 0.3s ease;
+  .command-box.show {
+    transform: translateY(0);
+    opacity: 1;
   }
 
   .command-box:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 15px rgba(59,130,246,0.6);
   }
 
   .command-text {
     font-family: monospace;
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .copy-btn {
@@ -118,19 +120,7 @@
 
   .copy-btn:hover {
     background: #2563eb;
-    box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
-  }
-
-  /* Animations */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-    100% { transform: translateY(0px); }
+    box-shadow: 0 0 12px #3b82f6;
   }
 </style>
 </head>
@@ -217,5 +207,6 @@
 </body>
 
 </html>
+
 
 
