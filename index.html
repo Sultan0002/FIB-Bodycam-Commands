@@ -27,23 +27,32 @@ body {
   overflow: hidden;
 }
 
-/* Neon Animated Border */
-.container::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: 22px;
-  background: linear-gradient(90deg, #00f2ff, #3b82f6, #00f2ff);
-  background-size: 300% 300%;
-  animation: borderGlow 6s linear infinite;
-  z-index: -1;
+.command-box {
+  background: rgba(17,24,39,0.9);
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid #3b82f6;
+  transition: 0.3s ease;
 }
 
-@keyframes borderGlow {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 300% 50%; }
+.command-box:hover {
+  box-shadow:
+    0 0 8px #3b82f6,
+    0 0 16px #3b82f6,
+    0 0 24px rgba(59,130,246,0.6);
+  transform: translateY(-4px);
 }
 
+.section-header:hover {
+  text-shadow:
+    0 0 6px #ffd500,
+    0 0 12px #ffd500;
+}  
+  
 /* Logo */
 .logo {
   display: block;
@@ -238,3 +247,4 @@ document.querySelectorAll(".command-box").forEach(box => {
 
 </body>
 </html>
+
