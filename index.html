@@ -143,19 +143,6 @@ h1 {
   margin-bottom: 30px;
 }
 
-.tab-btn {
-  padding: 10px 22px;
-  border-radius: 50px;
-  border: 1px solid rgba(255,255,255,0.15);
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: white;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
 .tab-btn:hover {
   background: rgba(59,130,246,0.15);
   box-shadow: 0 0 12px rgba(59,130,246,0.5);
@@ -177,15 +164,6 @@ h1 {
   cursor: pointer;
   transition: 0.3s;
   font-weight: bold;
-}
-
-.tab-btn.active {
-  background: #3b82f6;
-  box-shadow: 0 0 12px #3b82f6;
-}
-
-.tab-btn:hover {
-  box-shadow: 0 0 10px #3b82f6;
 }
 
 @keyframes glowPulse {
@@ -279,25 +257,7 @@ h1 {
     <div class="command-box"><div class="command-text">/me disconnects PDA to FIB cloud server</div><button class="copy-btn" onclick="copy(this)">Copy</button></div>
     </div>
   </div>
-
-<div id="radio" class="tab-content">
-
-  <h1>Radio Codes</h1>
-  <div class="yellow-line"></div>
-
-  <div class="command-box">
-    <div class="command-text">10-4 = Acknowledged</div>
-  </div>
-
-  <div class="command-box">
-    <div class="command-text">10-20 = Location</div>
-  </div>
-
-  <div class="command-box">
-    <div class="command-text">10-99 = Officer Needs Assistance</div>
-  </div>
-
-</div>  
+  
 </div>
 
 </div>
@@ -326,6 +286,7 @@ document.querySelectorAll(".command-box").forEach(box => {
 
 </body>
 </html>
+
 
 
 
