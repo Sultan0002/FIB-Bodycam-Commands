@@ -214,21 +214,6 @@ function copy(button) {
   setTimeout(() => button.innerText = "Copy", 1500);
 }
 
-function toggleSection(header) {
-  const allSections = document.querySelectorAll(".commands");
-  const section = header.nextElementSibling.nextElementSibling;
-
-  allSections.forEach(s => {
-    if (s !== section) s.style.maxHeight = null;
-  });
-
-  if (section.style.maxHeight) {
-    section.style.maxHeight = null;
-  } else {
-    section.style.maxHeight = section.scrollHeight + "px";
-  }
-}
-
 /* Scroll Reveal */
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -245,5 +230,6 @@ document.querySelectorAll(".command-box").forEach(box => {
 
 </body>
 </html>
+
 
 
