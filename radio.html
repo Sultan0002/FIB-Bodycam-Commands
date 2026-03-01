@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FIB Radio Codes</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 85%;
+  max-width: 950px;
+  margin: 40px 0;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(20,20,20,0.7);
+  backdrop-filter: blur(15px);
+  color: white;
+}
+
+.top-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.tab-btn {
+  padding: 10px 22px;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.tab-btn.active {
+  background: rgba(59,130,246,0.25);
+  border: 1px solid #3b82f6;
+  box-shadow: 0 0 12px rgba(59,130,246,0.7);
+}
+
+.command-box {
+  background: rgba(17,24,39,0.9);
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.command-text {
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.yellow-line {
+  height: 2px;
+  background: #ffd500;
+  margin: 10px 0 20px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="top-tabs">
+  <a href="index.html" class="tab-btn">Bodycam</a>
+  <a href="radio.html" class="tab-btn active">Radio Codes</a>
+</div>
+
+<h1>📡 Radio Codes</h1>
+<div class="yellow-line"></div>
+
+<div class="command-box">
+  <div class="command-text">10-4 = Acknowledged</div>
+</div>
+
+<div class="command-box">
+  <div class="command-text">10-20 = Location</div>
+</div>
+
+<div class="command-box">
+  <div class="command-text">10-99 = Officer Needs Assistance</div>
+</div>
+
+</div>
+
+</body>
+</html>
